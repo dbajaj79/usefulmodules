@@ -62,11 +62,6 @@ public class MainActivity extends AppCompatActivity implements OnSuccessListener
      *
      *
      */
-
-
-
-
-
     private ActivityMainBinding activityMainBinding;
     private FusedLocationProviderClient locationProviderClient;
     private LocationRequest locationRequest;
@@ -98,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements OnSuccessListener
     {
         setLocationRequest();
         setLocationSettingsRequest();
-
     }
 
     private void setLocationRequest()
