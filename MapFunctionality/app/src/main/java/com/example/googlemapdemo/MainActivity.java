@@ -1,42 +1,49 @@
 package com.example.googlemapdemo;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
+import com.example.googlemapdemo.adapter.MapOptionsAdapter;
 import com.example.googlemapdemo.databinding.ActivityMainBinding;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.example.googlemapdemo.onItemClickListener.OnItemSelectedListener;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MainActivity extends AppCompatActivity implements OnItemSelectedListener<String> {
 
-    GoogleMap mMap;
+
     ActivityMainBinding activityMainBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityMainBinding = DataBindingUtil.setContentView(this,R.layout.activity_main);
-        setUpMapFragment();
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setRecyclerView();
 
     }
 
-    private void setUpMapFragment()
-    {
-        SupportMapFragment supportMapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.fragment_map);
-        supportMapFragment.getMapAsync(this);
+    private void setRecyclerView() {
+        String[] options = new String[]{"Simple Map","Map UI And Gestures", "Camera and View"};
+        MapOptionsAdapter mapOptionsAdapter = new MapOptionsAdapter(options, this);
+        activityMainBinding.setAdapter(mapOptionsAdapter);
+
     }
+
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        LatLng latLng = new LatLng(-34,151);
-        mMap.addMarker(new MarkerOptions().position(latLng).title("Sydney Marker"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-
+    public void onItemSelected(int position, String value) {
+        Intent intent = null;
+        switch (position) {
+            case 0:
+                intent = new Intent(MainActivity.this, SimpleMap.class);
+                break;
+            case 1:
+                intent = new Intent(MainActivity.this,MapUIandGestures.class);
+                break;
+        }
+        if (intent != null) {
+            startActivity(intent);
+        }
     }
 }

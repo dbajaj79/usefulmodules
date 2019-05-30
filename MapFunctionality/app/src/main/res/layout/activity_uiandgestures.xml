@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fragment_uiandgestures"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/hide_zoom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="17dp"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_normal" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/type_train" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/type_stelite" />
+
+        <Button
+            android:id="@+id/enable_trafic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable  Trafic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/typenone" />
+
+        <Button
+            android:id="@+id/type_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/type_train"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/disable_zoom" />
+
+        <Button
+            android:id="@+id/type_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tranint"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/type_stelite"
+            app:layout_constraintStart_toEndOf="@+id/type_normal"
+            app:layout_constraintTop_toBottomOf="@+id/disable_sroll" />
+
+        <Button
+            android:id="@+id/type_stelite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stelite"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toStartOf="@+id/typenone"
+            app:layout_constraintStart_toEndOf="@+id/type_train"
+            app:layout_constraintTop_toBottomOf="@+id/disable_rotate" />
+
+        <Button
+            android:id="@+id/typenone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type None"
+            app:layout_constraintBottom_toTopOf="@+id/enable_trafic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/type_stelite"
+            app:layout_constraintTop_toBottomOf="@+id/type_hybrid" />
+
+        <Button
+            android:id="@+id/disable_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Zoom"
+            app:layout_constraintBottom_toTopOf="@+id/type_normal"
+            app:layout_constraintEnd_toStartOf="@+id/disable_sroll"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hide_zoom" />
+
+        <Button
+            android:id="@+id/disable_sroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:text="Disable Scroll"
+            app:layout_constraintBottom_toTopOf="@+id/type_train"
+            app:layout_constraintEnd_toStartOf="@+id/disable_rotate"
+            app:layout_constraintStart_toEndOf="@+id/disable_zoom"
+            app:layout_constraintTop_toBottomOf="@+id/hide_tilt" />
+
+        <Button
+            android:id="@+id/disable_rotate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Disable Rotate"
+            app:layout_constraintBottom_toTopOf="@+id/type_stelite"
+            app:layout_constraintEnd_toStartOf="@+id/type_hybrid"
+            app:layout_constraintStart_toEndOf="@+id/disable_sroll"
+            app:layout_constraintTop_toBottomOf="@+id/hide_toolbar" />
+
+        <Button
+            android:id="@+id/type_hybrid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="HyBrid"
+            app:layout_constraintBottom_toTopOf="@+id/typenone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/disable_rotate"
+            app:layout_constraintTop_toBottomOf="@+id/disable_tilt" />
+
+        <Button
+            android:id="@+id/hide_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hide Zoom"
+            app:layout_constraintEnd_toStartOf="@+id/hide_tilt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_uiandgestures" />
+
+        <Button
+            android:id="@+id/hide_tilt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hide Tilt"
+            app:layout_constraintEnd_toStartOf="@+id/hide_toolbar"
+            app:layout_constraintStart_toEndOf="@+id/hide_zoom"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_uiandgestures" />
+
+        <Button
+            android:id="@+id/hide_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hide Toll Bar"
+            app:layout_constraintEnd_toStartOf="@+id/disable_tilt"
+            app:layout_constraintStart_toEndOf="@+id/hide_tilt"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_uiandgestures" />
+
+        <Button
+            android:id="@+id/disable_tilt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disable Tilt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hide_toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_uiandgestures" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
