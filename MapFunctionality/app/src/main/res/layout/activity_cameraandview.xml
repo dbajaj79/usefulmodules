@@ -52,12 +52,55 @@
             android:id="@+id/btn_min_preference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="Zoom Min Pref"
             app:layout_constraintBottom_toTopOf="@+id/btn_zoomout"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_zoomwithPoint" />
+
+        <Button
+            android:id="@+id/btn_zoom_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Zoom By"
+            app:layout_constraintBottom_toTopOf="@+id/btn_max_preference"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_zoom_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Zoom To"
+            app:layout_constraintBottom_toTopOf="@+id/btn_max_preference"
+            app:layout_constraintStart_toEndOf="@+id/btn_zoom_by" />
+
+        <Button
+            android:id="@+id/btn_zoomwithPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Point Zoom"
+            app:layout_constraintBottom_toTopOf="@+id/btn_max_preference"
+            app:layout_constraintStart_toEndOf="@+id/btn_zoom_to" />
+
+        <Button
+            android:id="@+id/btn_restzoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Reset Pref"
+            app:layout_constraintBottom_toTopOf="@+id/btn_min_preference"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_zoomwithPoint" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

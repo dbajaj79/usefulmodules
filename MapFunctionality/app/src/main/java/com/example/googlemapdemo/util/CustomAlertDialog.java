@@ -39,18 +39,7 @@ public class CustomAlertDialog {
         alertDialog = builder.create();
         alertDialog.show();
     }
-    public static void showCustomDailogWithArea(Context context, String title, String description, String tag) {
-        alertdilogBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.input_alertdilog_witharea, null, false);
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setView(alertdilogBinding.getRoot());
-        mytag = tag;
-        alertdilogBinding.textViewTitle.setText(title);
-        alertdilogBinding.textViewMessage.setText(description);
-        alertdilogBinding.btnCancel.setOnClickListener(new OnClickHelper());
-        alertdilogBinding.btnEnter.setOnClickListener(new OnClickHelper());
-        alertDialog = builder.create();
-        alertDialog.show();
-    }
+
 
     static class OnClickHelper implements View.OnClickListener {
 

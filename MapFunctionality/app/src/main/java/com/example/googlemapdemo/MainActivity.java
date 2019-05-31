@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 intent = new Intent(MainActivity.this,GoogleMapPadding.class);
                 break;
             case 3:
-                intent = new Intent(MainActivity.this,CameraAndView.class);
+                intent = new Intent(MainActivity.this,CameraAndViewOptions.class);
                 break;
 
         }
