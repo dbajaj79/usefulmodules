@@ -1,9 +1,10 @@
-package com.example.googlemapdemo;
+package com.example.googlemapdemo.maprelatedthings;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.googlemapdemo.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -19,6 +20,7 @@ public class SimpleMap extends AppCompatActivity implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Simple Map");
         setContentView(R.layout.activity_simple_map);
         setUpMap();
     }

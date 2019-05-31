@@ -1,10 +1,11 @@
-package com.example.googlemapdemo;
+package com.example.googlemapdemo.maprelatedthings;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.googlemapdemo.R;
 import com.example.googlemapdemo.databinding.ActivityUiandgesturesBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -20,6 +21,7 @@ public class MapUIandGestures extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onCreate(Bundle saveInStance) {
         super.onCreate(saveInStance);
+        setTitle("Map UI and Gestures");
         activityUiandgesturesBinding = DataBindingUtil.setContentView(this, R.layout.activity_uiandgestures);
         setMapFragment();
     }

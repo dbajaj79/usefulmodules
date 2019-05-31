@@ -6,7 +6,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.googlemapdemo.adapter.MapOptionsAdapter;
+import com.example.googlemapdemo.cameraandview.CameraAndViewOptions;
 import com.example.googlemapdemo.databinding.ActivityMainBinding;
+import com.example.googlemapdemo.maprelatedthings.GoogleMapPadding;
+import com.example.googlemapdemo.maprelatedthings.MapUIandGestures;
+import com.example.googlemapdemo.maprelatedthings.SimpleMap;
 import com.example.googlemapdemo.onItemClickListener.OnItemSelectedListener;
 
 
@@ -40,13 +44,13 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 intent = new Intent(MainActivity.this, SimpleMap.class);
                 break;
             case 1:
-                intent = new Intent(MainActivity.this,MapUIandGestures.class);
+                intent = new Intent(MainActivity.this, MapUIandGestures.class);
                 break;
             case 2:
-                intent = new Intent(MainActivity.this,GoogleMapPadding.class);
+                intent = new Intent(MainActivity.this, GoogleMapPadding.class);
                 break;
             case 3:
-                intent = new Intent(MainActivity.this,CameraAndViewOptions.class);
+                intent = new Intent(MainActivity.this, CameraAndViewOptions.class);
                 break;
 
         }

@@ -1,8 +1,9 @@
-package com.example.googlemapdemo;
+package com.example.googlemapdemo.maprelatedthings;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.googlemapdemo.R;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -13,6 +14,7 @@ public class GoogleMapPadding extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Map Padding");
         setContentView(R.layout.activity_map_padding);
         setMapFragment();
     }

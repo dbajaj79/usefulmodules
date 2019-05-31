@@ -37,14 +37,14 @@ package="com.example.googlemapdemo">
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
-    <activity android:name=".SimpleMap" android:screenOrientation="portrait">
+    <activity android:name=".maprelatedthings.SimpleMap" android:screenOrientation="portrait">
 
     </activity>
-    <activity android:name=".MapUIandGestures" android:screenOrientation="portrait"/>
-    <activity android:name=".GoogleMapPadding" android:screenOrientation="portrait"/>
-    <activity android:name=".CameraZooming" android:screenOrientation="portrait"/>
-    <activity android:name=".CameraAndViewOptions" android:screenOrientation="portrait"/>
-    <activity android:name=".CameraScrolling" android:screenOrientation="portrait"/>
-    <activity android:name=".CameraPositioning" android:screenOrientation="portrait"/>
+    <activity android:name=".maprelatedthings.MapUIandGestures" android:screenOrientation="portrait"/>
+    <activity android:name=".maprelatedthings.GoogleMapPadding" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraZooming" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraAndViewOptions" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraScrolling" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraPositioning" android:screenOrientation="portrait"/>
 </application></manifest>
 

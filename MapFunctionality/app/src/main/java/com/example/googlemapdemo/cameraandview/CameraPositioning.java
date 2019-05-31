@@ -1,4 +1,4 @@
-package com.example.googlemapdemo;
+package com.example.googlemapdemo.cameraandview;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Point;
@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
-
-import com.example.googlemapdemo.databinding.ActivityCameraandviewBinding;
+import com.example.googlemapdemo.AppConstant;
+import com.example.googlemapdemo.R;
 import com.example.googlemapdemo.databinding.ActivityCamerpositioningBinding;
 import com.example.googlemapdemo.onItemClickListener.OnEnterClickListener;
-import com.example.googlemapdemo.util.CustomAlertDialog;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -33,7 +32,7 @@ public class CameraPositioning extends AppCompatActivity implements OnMapReadyCa
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+setTitle("Camera Position");
         sydney = new LatLng(-34,151);
         delhi = new LatLng(28.644800,77.216721);
         mumbai = new LatLng(19.076090,72.877426);
@@ -78,7 +77,6 @@ public class CameraPositioning extends AppCompatActivity implements OnMapReadyCa
 
         @Override
         public void onClick(View v) {
-            CustomAlertDialog.setOnEnterClickListener(new OnEnterClickListenerHelper());
             switch (v.getId()) {
                 case R.id.btn_latlng_with_zoom:
                     mGoogle.animateCamera(CameraUpdateFactory.newLatLngZoom(sydney,4f));
@@ -100,22 +98,22 @@ public class CameraPositioning extends AppCompatActivity implements OnMapReadyCa
         public void onEnterClick(String tag, String value) {
             Toast.makeText(CameraPositioning.this, tag + value, Toast.LENGTH_LONG).show();
             switch (tag) {
-                case AppConstants.PREF_MAX:
+                case AppConstant.PREF_MAX:
                     mGoogle.setMaxZoomPreference(Float.parseFloat(value));
                     break;
-                case AppConstants.PREF_MIN:
+                case AppConstant.PREF_MIN:
                     mGoogle.setMinZoomPreference(Float.parseFloat(value));
                     break;
-                case AppConstants.ZOOM_BY:
+                case AppConstant.ZOOM_BY:
                     mGoogle.moveCamera(CameraUpdateFactory.zoomBy(Float.parseFloat(value)));
                     break;
-                case AppConstants.ZOOM_BY_POINT:
+                case AppConstant.ZOOM_BY_POINT:
 
                     Float zoomValue = Float.parseFloat(value);
                     Point point = new Point(10, 20);
                     mGoogle.moveCamera(CameraUpdateFactory.zoomBy(zoomValue, point));
                     break;
-                case AppConstants.ZOOM_TO:
+                case AppConstant.ZOOM_TO:
                     mGoogle.moveCamera(CameraUpdateFactory.zoomTo(Float.parseFloat(value)));
                     break;
             }

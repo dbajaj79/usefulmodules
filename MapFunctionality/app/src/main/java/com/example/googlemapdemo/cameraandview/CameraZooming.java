@@ -1,4 +1,4 @@
-package com.example.googlemapdemo;
+package com.example.googlemapdemo.cameraandview;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Point;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.googlemapdemo.AppConstant;
+import com.example.googlemapdemo.R;
 import com.example.googlemapdemo.databinding.ActivityCameraandviewBinding;
 import com.example.googlemapdemo.onItemClickListener.OnEnterClickListener;
 import com.example.googlemapdemo.util.CustomAlertDialog;
@@ -24,6 +26,7 @@ public class CameraZooming extends AppCompatActivity implements OnMapReadyCallba
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Camera Zooming");
         cameraandviewBinding = DataBindingUtil.setContentView(this, R.layout.activity_cameraandview);
         setupMapFragment();
     }
@@ -67,20 +70,20 @@ public class CameraZooming extends AppCompatActivity implements OnMapReadyCallba
                     mGoogle.moveCamera(CameraUpdateFactory.zoomIn());
                     break;
                 case R.id.btn_max_preference:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Max Zoom Preference", "User can't increase Zoom Level from Given Number", AppConstants.PREF_MAX);
+                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Max Zoom Preference", "User can't increase Zoom Level from Given Number", AppConstant.PREF_MAX);
                     break;
 
                 case R.id.btn_min_preference:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Min Zoom Preference", "User can't change Map Zoom Level Below", AppConstants.PREF_MIN);
+                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Min Zoom Preference", "User can't change Map Zoom Level Below", AppConstant.PREF_MIN);
                     break;
                 case R.id.btn_zoom_by:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstants.ZOOM_TO);
+                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_TO);
                     break;
                 case R.id.btn_zoomwithPoint:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstants.ZOOM_BY_POINT);
+                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY_POINT);
                     break;
                 case R.id.btn_zoom_to:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstants.ZOOM_BY);
+                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY);
                     break;
                 case R.id.btn_restzoom:
                     mGoogle.resetMinMaxZoomPreference();
@@ -96,22 +99,22 @@ public class CameraZooming extends AppCompatActivity implements OnMapReadyCallba
         public void onEnterClick(String tag, String value) {
             Toast.makeText(CameraZooming.this, tag + value, Toast.LENGTH_LONG).show();
             switch (tag) {
-                case AppConstants.PREF_MAX:
+                case AppConstant.PREF_MAX:
                     mGoogle.setMaxZoomPreference(Float.parseFloat(value));
                     break;
-                case AppConstants.PREF_MIN:
+                case AppConstant.PREF_MIN:
                     mGoogle.setMinZoomPreference(Float.parseFloat(value));
                     break;
-                case AppConstants.ZOOM_BY:
+                case AppConstant.ZOOM_BY:
                     mGoogle.moveCamera(CameraUpdateFactory.zoomBy(Float.parseFloat(value)));
                     break;
-                case AppConstants.ZOOM_BY_POINT:
+                case AppConstant.ZOOM_BY_POINT:
 
                     Float zoomValue = Float.parseFloat(value);
                     Point point = new Point(10, 20);
                     mGoogle.moveCamera(CameraUpdateFactory.zoomBy(zoomValue, point));
                     break;
-                case AppConstants.ZOOM_TO:
+                case AppConstant.ZOOM_TO:
                     mGoogle.moveCamera(CameraUpdateFactory.zoomTo(Float.parseFloat(value)));
                     break;
             }
