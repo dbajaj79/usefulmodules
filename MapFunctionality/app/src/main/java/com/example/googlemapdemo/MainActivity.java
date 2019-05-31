@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.googlemapdemo.adapter.MapOptionsAdapter;
 import com.example.googlemapdemo.databinding.ActivityMainBinding;
 import com.example.googlemapdemo.onItemClickListener.OnItemSelectedListener;
-import com.google.android.gms.maps.GoogleMap;
+
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener<String> {
 
@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     }
 
     private void setRecyclerView() {
-        String[] options = new String[]{"Simple Map","Map UI And Gestures", "Camera and View"};
+        String[] options = new String[]{"Simple Map","Map UI And Gestures","Map Padding",
+                "Camera and View"};
         MapOptionsAdapter mapOptionsAdapter = new MapOptionsAdapter(options, this);
         activityMainBinding.setAdapter(mapOptionsAdapter);
 
@@ -41,6 +42,13 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             case 1:
                 intent = new Intent(MainActivity.this,MapUIandGestures.class);
                 break;
+            case 2:
+                intent = new Intent(MainActivity.this,GoogleMapPadding.class);
+                break;
+            case 3:
+                intent = new Intent(MainActivity.this,CameraAndView.class);
+                break;
+
         }
         if (intent != null) {
             startActivity(intent);

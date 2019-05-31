@@ -41,5 +41,7 @@ package="com.example.googlemapdemo">
 
     </activity>
     <activity android:name=".MapUIandGestures" android:screenOrientation="portrait"/>
+    <activity android:name=".GoogleMapPadding" android:screenOrientation="portrait"/>
+    <activity android:name=".CameraAndView" android:screenOrientation="portrait"/>
 </application></manifest>
 
