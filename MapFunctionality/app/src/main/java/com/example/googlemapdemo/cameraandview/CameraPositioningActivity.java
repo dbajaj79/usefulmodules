@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class CameraPositioning extends AppCompatActivity implements OnMapReadyCallback {
+public class CameraPositioningActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     ActivityCamerpositioningBinding activityCamerpositioningBinding;
 
@@ -96,7 +96,7 @@ setTitle("Camera Position");
 
         @Override
         public void onEnterClick(String tag, String value) {
-            Toast.makeText(CameraPositioning.this, tag + value, Toast.LENGTH_LONG).show();
+            Toast.makeText(CameraPositioningActivity.this, tag + value, Toast.LENGTH_LONG).show();
             switch (tag) {
                 case AppConstant.PREF_MAX:
                     mGoogle.setMaxZoomPreference(Float.parseFloat(value));

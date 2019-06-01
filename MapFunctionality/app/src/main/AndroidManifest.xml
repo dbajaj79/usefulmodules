@@ -42,9 +42,13 @@ package="com.example.googlemapdemo">
     </activity>
     <activity android:name=".maprelatedthings.MapUIandGestures" android:screenOrientation="portrait"/>
     <activity android:name=".maprelatedthings.GoogleMapPadding" android:screenOrientation="portrait"/>
-    <activity android:name=".cameraandview.CameraZooming" android:screenOrientation="portrait"/>
-    <activity android:name=".cameraandview.CameraAndViewOptions" android:screenOrientation="portrait"/>
-    <activity android:name=".cameraandview.CameraScrolling" android:screenOrientation="portrait"/>
-    <activity android:name=".cameraandview.CameraPositioning" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraZoomingActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.BoundariesActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraAndViewOptionsActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraScrollingActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".shapes.ShapesActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".shapes.CircleDemoActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".shapes.PolylinesActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".cameraandview.CameraPositioningActivity" android:screenOrientation="portrait"/>
 </application></manifest>
 

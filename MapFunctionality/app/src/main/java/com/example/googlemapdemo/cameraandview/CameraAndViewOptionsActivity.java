@@ -11,7 +11,7 @@ import com.example.googlemapdemo.adapter.MapOptionsAdapter;
 import com.example.googlemapdemo.databinding.ActivityMainBinding;
 import com.example.googlemapdemo.onItemClickListener.OnItemSelectedListener;
 
-public class CameraAndViewOptions extends AppCompatActivity implements OnItemSelectedListener<String>{
+public class CameraAndViewOptionsActivity extends AppCompatActivity implements OnItemSelectedListener<String>{
 
 
     ActivityMainBinding activityMainBinding;
@@ -26,8 +26,8 @@ public class CameraAndViewOptions extends AppCompatActivity implements OnItemSel
 
     private void setRecyclerView()
     {
-        String[] options = new String[]{"Zooming","Scrolling","Positioning","Boundries"};
-        MapOptionsAdapter mapOptionsAdapter = new MapOptionsAdapter(options,CameraAndViewOptions.this);
+        String[] options = new String[]{"Zooming","Scrolling","Positioning","BoundariesActivity"};
+        MapOptionsAdapter mapOptionsAdapter = new MapOptionsAdapter(options, CameraAndViewOptionsActivity.this);
         activityMainBinding.setAdapter(mapOptionsAdapter);
     }
 
@@ -37,13 +37,16 @@ public class CameraAndViewOptions extends AppCompatActivity implements OnItemSel
         switch (position)
         {
             case 0:
-                intent = new Intent(CameraAndViewOptions.this, CameraZooming.class);
+                intent = new Intent(CameraAndViewOptionsActivity.this, CameraZoomingActivity.class);
                 break;
             case 1:
-                intent = new Intent(CameraAndViewOptions.this, CameraScrolling.class);
+                intent = new Intent(CameraAndViewOptionsActivity.this, CameraScrollingActivity.class);
                 break;
             case 2:
-                intent = new Intent(CameraAndViewOptions.this, CameraPositioning.class);
+                intent = new Intent(CameraAndViewOptionsActivity.this, CameraPositioningActivity.class);
+                break;
+            case 3:
+                intent = new Intent(CameraAndViewOptionsActivity.this, BoundariesActivity.class);
                 break;
         }
         if(intent!=null)

@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.googlemapdemo.adapter.MapOptionsAdapter;
-import com.example.googlemapdemo.cameraandview.CameraAndViewOptions;
+import com.example.googlemapdemo.cameraandview.CameraAndViewOptionsActivity;
 import com.example.googlemapdemo.databinding.ActivityMainBinding;
 import com.example.googlemapdemo.maprelatedthings.GoogleMapPadding;
 import com.example.googlemapdemo.maprelatedthings.MapUIandGestures;
 import com.example.googlemapdemo.maprelatedthings.SimpleMap;
 import com.example.googlemapdemo.onItemClickListener.OnItemSelectedListener;
+import com.example.googlemapdemo.shapes.ShapesActivity;
 
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener<String> {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
     private void setRecyclerView() {
         String[] options = new String[]{"Simple Map","Map UI And Gestures","Map Padding",
-                "Camera and View"};
+                "Camera and View","Shapes"};
         MapOptionsAdapter mapOptionsAdapter = new MapOptionsAdapter(options, this);
         activityMainBinding.setAdapter(mapOptionsAdapter);
 
@@ -50,8 +51,11 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 intent = new Intent(MainActivity.this, GoogleMapPadding.class);
                 break;
             case 3:
-                intent = new Intent(MainActivity.this, CameraAndViewOptions.class);
+                intent = new Intent(MainActivity.this, CameraAndViewOptionsActivity.class);
                 break;
+            case 4:
+                intent = new Intent(MainActivity.this, ShapesActivity.class);
+
 
         }
         if (intent != null) {

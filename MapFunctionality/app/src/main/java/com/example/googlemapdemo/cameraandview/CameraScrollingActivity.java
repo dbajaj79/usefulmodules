@@ -14,7 +14,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class CameraScrolling extends AppCompatActivity implements OnMapReadyCallback {
+public class CameraScrollingActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     ActivityScrollingBinding activityScrollingBinding;
     GoogleMap mGoogle;

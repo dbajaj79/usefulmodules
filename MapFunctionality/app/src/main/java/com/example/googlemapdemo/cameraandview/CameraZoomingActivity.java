@@ -17,7 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
-public class CameraZooming extends AppCompatActivity implements OnMapReadyCallback {
+public class CameraZoomingActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     ActivityCameraandviewBinding cameraandviewBinding;
 
@@ -70,20 +70,20 @@ public class CameraZooming extends AppCompatActivity implements OnMapReadyCallba
                     mGoogle.moveCamera(CameraUpdateFactory.zoomIn());
                     break;
                 case R.id.btn_max_preference:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Max Zoom Preference", "User can't increase Zoom Level from Given Number", AppConstant.PREF_MAX);
+                    CustomAlertDialog.showCustomDailog(CameraZoomingActivity.this, "Set Max Zoom Preference", "User can't increase Zoom Level from Given Number", AppConstant.PREF_MAX);
                     break;
 
                 case R.id.btn_min_preference:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Set Min Zoom Preference", "User can't change Map Zoom Level Below", AppConstant.PREF_MIN);
+                    CustomAlertDialog.showCustomDailog(CameraZoomingActivity.this, "Set Min Zoom Preference", "User can't change Map Zoom Level Below", AppConstant.PREF_MIN);
                     break;
                 case R.id.btn_zoom_by:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_TO);
+                    CustomAlertDialog.showCustomDailog(CameraZoomingActivity.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_TO);
                     break;
                 case R.id.btn_zoomwithPoint:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY_POINT);
+                    CustomAlertDialog.showCustomDailog(CameraZoomingActivity.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY_POINT);
                     break;
                 case R.id.btn_zoom_to:
-                    CustomAlertDialog.showCustomDailog(CameraZooming.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY);
+                    CustomAlertDialog.showCustomDailog(CameraZoomingActivity.this, "Map is Zoom By this Number", "But make Sure Zoom Range Between Max and Min Zoom Preference", AppConstant.ZOOM_BY);
                     break;
                 case R.id.btn_restzoom:
                     mGoogle.resetMinMaxZoomPreference();
@@ -97,7 +97,7 @@ public class CameraZooming extends AppCompatActivity implements OnMapReadyCallba
 
         @Override
         public void onEnterClick(String tag, String value) {
-            Toast.makeText(CameraZooming.this, tag + value, Toast.LENGTH_LONG).show();
+            Toast.makeText(CameraZoomingActivity.this, tag + value, Toast.LENGTH_LONG).show();
             switch (tag) {
                 case AppConstant.PREF_MAX:
                     mGoogle.setMaxZoomPreference(Float.parseFloat(value));
