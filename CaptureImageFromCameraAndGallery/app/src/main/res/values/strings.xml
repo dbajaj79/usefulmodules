@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CaptureImage</string>
+    <string name="need_gallery_write_permission">Gallery permission is needed to store number plates photos</string>
+    <string name="need_storage_write_permission">Storage permission is needed to store images of number plates</string>
+    <string name="need_gallery_select_permission">Permission is needed to select number plates from the gallery</string>
+    <string name="need_camera_permission">Camera permission is needed to take number plate photos</string>
+    <string name="need_select_pdf_permission">Permission is needed to select pdf file from documents</string>
+    <string name="attaching_numberplate_pic">Saving number plate pic</string>
+    <string name="number_plate_hint">Number plate image has already captured</string>
+    <string name="number_plate_attach_error">An error occurred while attaching the selected file</string>
+</resources>
